@@ -1,0 +1,53 @@
+.ChatSide{
+  position: fixed;
+  width: 300px;
+  border-bottom: 1px solid #eeeeee;
+  &__header{
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__box{
+      display: flex;
+      height: 20px;
+      background-color: #253141;
+      color: #ffffff;
+      width: 260px;
+      font-weight: bold;
+      font-size: 16px;
+      &__name{
+        width: 200px;
+      }
+      &__menu{
+        display: flex;
+        justify-content: flex-end;
+        li{
+          a{
+             text-decoration: none;
+             padding-left: 5px;
+             color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  &__groups{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 0 20px;
+    .group{
+      box-sizing: border-box;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 20px 0 40px;
+      &__name{
+        font-size: 15px;
+      }
+      &__message{
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    } 
+  } 
+} 

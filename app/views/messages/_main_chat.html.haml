@@ -1,0 +1,39 @@
+.wrapper
+
+  = render 'side_bar'
+
+  .ChatMain
+    .ChatMain__header
+      .ChatMain__header__name
+        .ChatMain__header__name__group-name
+          test
+        .ChatMain__header__name__member
+          Member : masa
+      = link_to "#", class:"edit" do 
+        Edit
+    .ChatMain__message
+      .ChatMain__message__boxes
+        .ChatMain__message__boxes__info
+          %p.ChatMain__message__boxes__info__name
+            masa
+          %p.ChatMain__message__boxes__info__date
+            2020/01/01(Sun) 12:00:00
+        %p.ChatMain__message__boxes__text
+          おはよう！
+      .ChatMain__message__boxes
+        .ChatMain__message__boxes__info
+          %p.ChatMain__message__boxes__info__name
+            masa
+          %p.ChatMain__message__boxes__info__date
+            2020/01/01(Sun) 13:00:00
+        %p.ChatMain__message__boxes__text
+          今日は夜から雨！
+    .ChatMain__form
+      %form
+        %input.form__text{placeholder: "type a message"}
+        .form__input-box
+          %label.form__input-box__image
+            = icon("fa", "image", class: "icon")
+            %input.file{type: "file"}
+        %input.form__submit{type: "submit",  value: 'Send'}
+        
