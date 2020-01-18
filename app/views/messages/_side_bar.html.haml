@@ -1,0 +1,23 @@
+.ChatSide
+  .ChatSide__header
+    .ChatSide__header__box
+      %p.ChatSide__header__box__name
+        やべ
+      %ul.ChatSide__header__box__menu
+        %li.ChatSide__header__box__edit
+          = link_to "#" do
+            = icon('fas', 'edit')
+        %li.ChatSide__header__box__NewGroup
+          = link_to "#" do
+            = icon('fas', 'cog')
+  .ChatSide__groups
+    .group
+      .group__name
+        pon
+      .group__message
+        まだメッセージがありません
+    .group
+      .group__name
+        pon2
+      .group__message
+        まだメッセージがありません
