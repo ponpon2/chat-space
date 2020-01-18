@@ -2,5 +2,6 @@
 @import "./messages";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
-@import "modules/side_bar";
-@import "modules/chat";
+@import "./variables";
+@import "./modules/chat";
+@import "./modules/side_bar";

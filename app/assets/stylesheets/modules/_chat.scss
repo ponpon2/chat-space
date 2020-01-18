@@ -12,12 +12,12 @@
     &__name{
       padding: 35px 27px 40px;
       &__group-name{
-        color: #333333;
+        color: $main_dark;
         font-size: 20px;
         padding-bottom: 15px;
       }
       &__member{
-        color: #999999;
+        color: $main_gray;
         font-size: 12px;
       }
     }
@@ -26,8 +26,8 @@
       width: 72px;
       text-decoration: none;
       font-size: 16px;
-      color: #38aef0;
-      border: 1px solid #38aef0;
+      color: $light_blue;
+      border: 1px solid $light_blue;
       text-align: center;
       line-height: 40px;
       margin-top:28px;
@@ -44,12 +44,12 @@
         display: flex;
         margin-bottom: 12px;
         &__name{
-          color: #333333;
+          color: $main_dark;
           font-size: 16px;
         }
         &__date{
           padding-left: 10px;
-          color: #999999;
+          color: $main_gray;
           font-size: 12px;
         }
       }
@@ -71,7 +71,7 @@
         width: calc(100% - 150px);
       }
       &__input-box {
-        background-color: white;
+        background-color: $white;
         float: left;
         height: 50px;
         padding-right: 10px;
@@ -87,8 +87,8 @@
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
-        background-color: #38aef0;
-        color: white;
+        background-color: $light_blue;
+        color: $white;
         border: none;
         float: right;
       }
