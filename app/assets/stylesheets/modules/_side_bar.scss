@@ -37,17 +37,20 @@
     background-color: #2f3e51;
     padding: 0 20px;
     .group{
-      box-sizing: border-box;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 20px 0 40px;
-      &__name{
-        font-size: 15px;
+      a{
+        box-sizing: border-box;
+        color: #ffffff;
+        text-decoration: none;
       }
-      &__message{
-        font-size: 11px;
-        margin-top: 5px;
-      }
-    } 
+        &__name{
+          font-size: 15px;
+          padding-top: 20px;
+        }
+        &__message{
+          font-size: 11px;
+          margin-top: 5px;
+          padding-bottom: 40px;
+        }
+    }
   } 
 } 
