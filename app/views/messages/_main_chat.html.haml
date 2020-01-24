@@ -1,39 +1,22 @@
-.wrapper
-
-  = render 'side_bar'
-
-  .ChatMain
-    .ChatMain__header
-      .ChatMain__header__name
-        .ChatMain__header__name__group-name
-          test
-        .ChatMain__header__name__member
-          Member : masa
-      = link_to "#", class:"edit" do 
-        Edit
-    .ChatMain__message
-      .ChatMain__message__boxes
-        .ChatMain__message__boxes__info
-          %p.ChatMain__message__boxes__info__name
-            masa
-          %p.ChatMain__message__boxes__info__date
-            2020/01/01(Sun) 12:00:00
-        %p.ChatMain__message__boxes__text
-          おはよう！
-      .ChatMain__message__boxes
-        .ChatMain__message__boxes__info
-          %p.ChatMain__message__boxes__info__name
-            masa
-          %p.ChatMain__message__boxes__info__date
-            2020/01/01(Sun) 13:00:00
-        %p.ChatMain__message__boxes__text
-          今日は夜から雨！
-    .ChatMain__form
-      %form
-        %input.form__text{placeholder: "type a message"}
-        .form__input-box
-          %label.form__input-box__image
-            = icon("fa", "image", class: "icon")
-            %input.file{type: "file"}
-        %input.form__submit{type: "submit",  value: 'Send'}
-        
+.ChatMain
+  .ChatMain__header
+    .ChatMain__header__name
+      .ChatMain__header__name__group-name
+        = @group.name
+      .ChatMain__header__name__member
+        Member : 
+        - @group.users.each do |group_user|
+          = group_user.name
+    = link_to edit_group_path(@group), data: {"turbolinks": false} do
+      Edit
+  .ChatMain__messages
+    = render @messages
+  .ChatMain__form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: "form__text", placeholder: "type a message"
+      .form__input-box
+        = f.label :image, class: "form__input-box__image" do
+          = icon("fas", "image", class: "icon")
+          = f.file_field :image, class: "file"
+      = f.submit "Send", class: "form__submit"
+      
