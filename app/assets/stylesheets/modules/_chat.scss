@@ -38,6 +38,7 @@
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
     padding: 46px 40px;
+    overflow: scroll;
     .message{
       padding-bottom: 40px;
       .upper-message{
@@ -64,7 +65,7 @@
     background-color: #d2d2d2;
     padding: 20px 50px 20px 40px;
     display: flex;
-    input[type="text"]{
+    .form__text{
       border: none;
       float: left;
       height: 50px;
@@ -75,17 +76,15 @@
       height: 50px;
       padding-right: 10px;
       float: left;
-      .form__input-box__image{
-        .icon{
+      &__image{
           font-size: 20px;
           line-height: 50px;
-        }
-        .file{
+      }
+      .hidden{
           display: none;
-        }
       }
     }
-    input[type="submit"]{
+    .form__submit{
       height: 50px;
       padding: 0 30px;
       margin-left: 15px;
