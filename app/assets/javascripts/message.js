@@ -3,7 +3,7 @@ $(function(){
     var content = message.content ? `<p class="lower-message__content">${message.content}</p>` : "";
     var image = message.image ? `<img class="lower-message__image" src="${message.image}">` : "";
 
-    var html = `<div class="message" data-id=${message.id}>
+    var html = `<div class="message" data-message-id="${message.id}">
                 <div class="upper-message">
                 <div class="upper-message__user-name">
                 ${message.user_name}
@@ -40,11 +40,11 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-    });
+    })
+    return false;
   });
   var reloadMessages = function(){
-    var last_message_id = $('.message:last').data("id");
-
+    last_message_id = $('.message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -52,18 +52,18 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      if (messages.length !== 0) {
+      if(messages.length !== 0){
         var insertHTML = '';
         $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
-        });
-      $('.ChatMain__messages').append(insertHTML);
-      $('.ChatMain__messages').animate({ scrollTop: $('.ChatMain__messages')[0].scrollHeight});
+          insertHTML += buildHTML(message)
+          });
+        $('.ChatMain__messages').append(insertHTML);
+        $('.ChatMain__messages').animate({ scrollTop: $('.ChatMain__messages')[0].scrollHeight});
       }
     })
     .fail(function() {
       alert('reloadMessageError');
-    });
+    }); 
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
